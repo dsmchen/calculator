@@ -1,0 +1,105 @@
+body {
+    background-color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+div {
+    width: 376px;
+}
+
+#container {
+    margin: auto;
+    margin-top: 5%;
+}
+
+.display {
+    background-color: white;
+    height: 50px;
+    border: solid darkgrey;
+    border-width: 1px 1px 0 1px;
+    padding: 10px;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+    font-size: 40px;
+    overflow: auto;
+    line-height: 50px;
+}
+
+#prevDisp {
+    border-radius: 5px 5px 0 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: gainsboro;
+    height: 290px;
+    border: 1px solid darkgrey;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+}
+
+button {
+    height: 53px;
+    border: 1px solid dimgrey;
+    border-radius: 2.5px;
+    box-shadow: inset 1px 1px 1px whitesmoke;
+    padding: 5px 10px;
+    margin: 2px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 30px;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+.digit, [id='.'] {
+    background-color: darkgrey;
+}
+
+.operator {
+    background-color: orange;
+    width: 90px;
+}
+
+[id='1'], [id='2'], [id='3'], [id='4'], [id='5'], [id='6'], [id='7'], [id='8'], [id='9'], [id='.'], #clear {
+    width: 90px;
+}
+
+[id='0'] {
+    width: 184px;
+}
+
+#del {
+    width: 184px;
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: darkgrey;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:link, a:visited {
+    color: darkgrey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+}
