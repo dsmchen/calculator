@@ -7,7 +7,6 @@ Sources:
 - [Desmos's calculator](https://www.desmos.com/fourfunction)
 - [The Polyglot Developer's shunting yard algorithm](https://www.thepolyglotdeveloper.com/2015/03/parse-with-the-shunting-yard-algorithm-using-javascript/)
 - [Matt Parsons's postfix algorithm](https://www.parsonsmatt.org/2014/07/07/postfixjs.html)
-- https://www.toptal.com/designers/htmlarrows/math/
 
 Areas for improvement
 - Unary minus operator
