@@ -4,38 +4,6 @@ let currDispVal = ''
 let expression = '';
 let ans = '';
 
-const buttons = document.querySelectorAll('button')
-buttons.forEach(button => {
-    button.addEventListener('click', e => {
-        if (button.id === 'equals') return equals();
-        if (button.id === 'clear') return clear();
-        if (button.id === 'del') return del();
-        if (button.className === 'digit' && /(^|\s)0$/.test(expression)
-            || button.className === 'operator' && /(^|\.)$/.test(expression)
-            || button.id === '.' && /\.(\d+)?$/.test(expression))
-            return;
-        if (button.className === 'operator' && /\s$/.test(expression)) {
-            del();
-        }
-        if (button.id === '.' && /(^|[^\d])$/.test(expression)) {
-            currDispVal += 0;
-            expression += 0;
-        }        
-        if (ans) {
-            if (button.className === 'digit' || button.id === '.') {
-                clear();        
-            } else {
-                currDispVal = ans;
-                expression = ans;
-                ans = '';
-                prevDisp.textContent = '';               
-            }
-        }
-        currDisp.textContent = `${currDispVal += button.textContent}`;
-        expression += button.id;
-    });
-});
-
 const equals = () => {
     prevDisp.textContent = currDispVal;
     if (/^\d+(\.\d+)?$/.test(expression)) {
@@ -75,7 +43,7 @@ const solvePostfix = postfix => {
 const infixToPostfix = infix => {
     let outputQueue = '';
     let operatorStack = [];
-    const precedence = {
+    const order = {
         '*': 2,
         '/': 2,
         '+': 1,
@@ -88,7 +56,7 @@ const infixToPostfix = infix => {
         } else if ('*/+-'.indexOf(token) !== -1) {
             let o1 = token;
             let o2 = operatorStack[operatorStack.length - 1];
-            while ('*/+-'.indexOf(o2) !== -1 && precedence[o1] <= precedence[o2]) {
+            while ('*/+-'.indexOf(o2) !== -1 && order[o1] <= order[o2]) {
                 outputQueue += operatorStack.pop() + ' ';
                 o2 = operatorStack[operatorStack.length - 1];
             }
@@ -124,3 +92,48 @@ const del = () => {
     expression = expression.replace(/\s?.\s?$/, '');
     currDisp.textContent = currDispVal;
 }
+
+const createDisp = function (e) {
+    let data = this;
+    if (this === window) {
+        data = e;
+        console.log(data.id); // TEST
+    }
+    if (data.className === 'digit' && /(^|\s)0$/.test(expression)
+        || data.className === 'operator' && /(^|\.)$/.test(expression)
+        || data.id === '.' && /\.(\d+)?$/.test(expression))
+        return;
+    if (data.id === 'equals') {
+        console.log('i am a test'); // TEST
+        return equals();
+    }
+    if (data.id === 'clear') return clear();
+    if (data.id === 'del') return del();
+    if (data.className === 'operator' && /\s$/.test(expression)) {
+        del();
+    } else if (data.id === '.' && /(^|[^\d])$/.test(expression)) {
+        currDispVal += 0;
+        expression += 0;
+    } else if (ans) {
+        if (data.className === 'digit' || data.id === '.') {
+            clear();        
+        } else {
+            currDispVal = ans;
+            expression = ans;
+            ans = '';
+            prevDisp.textContent = '';               
+        }
+    }
+    currDisp.textContent = `${currDispVal += data.textContent}`;
+    expression += data.id;
+}
+
+const checkKey = e => { // TEST
+    if (e.key === '=') {
+        createDisp(document.querySelector('#equals'));
+    }
+}
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', createDisp));
+window.addEventListener('keydown', checkKey); // TEST
