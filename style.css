@@ -3,13 +3,10 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
-div {
-    width: 376px;
-}
-
 #container {
     margin: auto;
-    margin-top: 5%;
+    margin-top: 5%; 
+    width: 398px;
 }
 
 .display {
@@ -30,7 +27,7 @@ div {
     border-radius: 5px 5px 0 0;
 }
 
-.flex-container {
+#flex-container {
     display: flex;
     flex-wrap: wrap;
     background-color: gainsboro;
