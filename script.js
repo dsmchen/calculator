@@ -97,16 +97,12 @@ const createDisp = function (e) {
     let data = this;
     if (this === window) {
         data = e;
-        console.log(data.id); // TEST
     }
     if (data.className === 'digit' && /(^|\s)0$/.test(expression)
         || data.className === 'operator' && /(^|\.)$/.test(expression)
         || data.id === '.' && /\.(\d+)?$/.test(expression))
         return;
-    if (data.id === 'equals') {
-        console.log('i am a test'); // TEST
-        return equals();
-    }
+    if (data.id === 'equals') return equals();
     if (data.id === 'clear') return clear();
     if (data.id === 'del') return del();
     if (data.className === 'operator' && /\s$/.test(expression)) {
@@ -128,12 +124,14 @@ const createDisp = function (e) {
     expression += data.id;
 }
 
-const checkKey = e => { // TEST
-    if (e.key === '=') {
-        createDisp(document.querySelector('#equals'));
+const checkKey = e => {
+    if (/^([\d+\-*\/=\.]|Backspace|Escape)$/.test(e.key)) {
+        createDisp(document.querySelector(`[data-key=${CSS.escape(e.key)}]`));
+    } else if (/^Enter$/.test(e.key)) {
+        createDisp(document.querySelector(`[data-key='=']`));
     }
 }
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', createDisp));
-window.addEventListener('keydown', checkKey); // TEST
+window.addEventListener('keydown', checkKey);
