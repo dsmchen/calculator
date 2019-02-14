@@ -7,7 +7,8 @@ let ans = '';
 const equals = () => {
     prevDisp.textContent = currDispVal;
     if (/^\d+(\.\d+)?$/.test(expression)) {
-        currDisp.textContent = `= ${expression}`;
+        ans = expression;
+        currDisp.textContent = `= ${ans}`;
     } else if (/^\d+(\.\d+)?(\s[+\-*/]\s\d+(\.\d+)?)+$/.test(expression)) {
         ans = solvePostfix();
         if (!isFinite(ans)) {
