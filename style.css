@@ -39,6 +39,11 @@ a:hover {
     color: grey;
     text-decoration: underline;
 }
+a:focus {
+    color: grey;
+    text-decoration: underline;
+    outline: 2px dotted black;
+}
 
 #content {
     margin: auto;
@@ -93,6 +98,10 @@ button {
 }
 button:hover {
     opacity: 1;
+}
+button:focus {
+    opacity: 1;
+    outline: 2px dotted black;
 }
 
 .digit, [id='.'] {

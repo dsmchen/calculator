@@ -128,8 +128,6 @@ const createDisp = function (e) {
 const checkKey = e => {
     if (/^([\d+\-*\/=\.]|Backspace|Escape)$/.test(e.key)) {
         createDisp(document.querySelector(`[data-key=${CSS.escape(e.key)}]`));
-    } else if (/^Enter$/.test(e.key)) {
-        createDisp(document.querySelector(`[data-key='=']`));
     }
 }
 
