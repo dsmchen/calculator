@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang='en-us'>
     <head>
         <title>Calculator</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-        <link href='./style.css' type='text/css' rel='stylesheet'>
+        <link href='style.css' rel='stylesheet'>
     </head>
     <body>
         <div id='page-container'>
             <main>
                 <div id='content'>
-                    <div id='prevDisp' class='display'></div>
-                    <div id='currDisp' class='display'></div>        
+                    <div class='display' id='prevDisp'></div>
+                    <div class='display' id='currDisp'></div>        
                     <div id='flex-container'>
-                        <button data-key='Backspace' id='del' class='digit'>DEL</button>
-                        <button data-key='Escape' id='clear' class='digit'>AC</button>
-                        <button data-key='/' id=' / ' class='operator'> &divide; </button>
-                        <button data-key='7' id='7' class='digit'>7</button>
-                        <button data-key='8' id='8' class='digit'>8</button>
-                        <button data-key='9' id='9' class='digit'>9</button>                
-                        <button data-key='*' id=' * ' class='operator'> &times; </button>
-                        <button data-key='4' id='4' class='digit'>4</button>
-                        <button data-key='5' id='5' class='digit'>5</button>
-                        <button data-key='6' id='6' class='digit'>6</button>
-                        <button data-key='-' id=' - ' class='operator'> &minus; </button>                
-                        <button data-key='1' id='1' class='digit'>1</button>
-                        <button data-key='2' id='2' class='digit'>2</button>
-                        <button data-key='3' id='3' class='digit'>3</button>
-                        <button data-key='+' id=' + ' class='operator'> + </button>                
-                        <button data-key='0' id='0' class='digit'>0</button>
-                        <button data-key='.' id='.'>.</button>
-                        <button data-key='=' id='equals' class='operator'>=</button>
+                        <button class='digit' id='del' data-key='Backspace'>DEL</button>
+                        <button class='digit' id='clear' data-key='Escape'>AC</button>
+                        <button class='operator' id=' / ' data-key='/'> &divide; </button>
+                        <button class='digit' id='7' data-key='7'>7</button>
+                        <button class='digit' id='8' data-key='8'>8</button>
+                        <button class='digit' id='9' data-key='9'>9</button>                
+                        <button class='operator' id=' * ' data-key='*'> &times; </button>
+                        <button class='digit' id='4' data-key='4'>4</button>
+                        <button class='digit' id='5' data-key='5'>5</button>
+                        <button class='digit' id='6' data-key='6'>6</button>
+                        <button class='operator' id=' - ' data-key='-'> &minus; </button>                
+                        <button class='digit'  id='1'data-key='1'>1</button>
+                        <button class='digit' id='2' data-key='2'>2</button>
+                        <button class='digit' id='3' data-key='3'>3</button>
+                        <button class='operator' id=' + ' data-key='+'> + </button>                
+                        <button class='digit' id='0' data-key='0'>0</button>
+                        <button id='.' data-key='.'>.</button>
+                        <button class='operator' id='equals' data-key='='>=</button>
                     </div>
                 </div>
             </main>
@@ -38,6 +40,6 @@
                 <a href='https://www.theodinproject.com' target='_blank'>The Odin Project</a> Student 
             </footer>
         </div>
-        <script src='./script.js'></script>
+        <script src='script.js'></script>
     </body>
 </html>

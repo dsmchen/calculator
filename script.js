@@ -99,13 +99,13 @@ const createDisp = function (e) {
     if (this === window) {
         data = e;
     }
+    if (data.id === 'equals') return equals();
+    if (data.id === 'clear') return clear();
+    if (data.id === 'del') return del();    
     if (data.className === 'digit' && /(^|\s)0$/.test(expression)
         || data.className === 'operator' && /(^|\.)$/.test(expression)
         || data.id === '.' && /\.(\d+)?$/.test(expression))
         return;
-    if (data.id === 'equals') return equals();
-    if (data.id === 'clear') return clear();
-    if (data.id === 'del') return del();
     if (data.className === 'operator' && /\s$/.test(expression)) {
         del();
     } else if (data.id === '.' && /(^|[^\d])$/.test(expression)) {
@@ -128,7 +128,9 @@ const createDisp = function (e) {
 const checkKey = e => {
     if (/^([\d+\-*\/=\.]|Backspace|Escape)$/.test(e.key)) {
         createDisp(document.querySelector(`[data-key=${CSS.escape(e.key)}]`));
-    }
+    } else  if (/^Enter$/.test(e.key)) {
+        createDisp(document.querySelector(`[data-key='=']`));
+    } 
 }
 
 const buttons = document.querySelectorAll('button');
