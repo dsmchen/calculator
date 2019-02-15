@@ -101,8 +101,8 @@ button {
   transition-duration: 0.25s;
 }
 button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
+    padding: 0;
+    border: 0;
 }
 button:hover {
   opacity: 1;
