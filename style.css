@@ -48,7 +48,7 @@ a:focus {
 #content {
     width: 398px;
     margin: auto;
-    margin-top: 5%; 
+    margin-top: 5%;
 }
 
 .display {
@@ -66,7 +66,8 @@ a:focus {
 }
 
 #prevDisp {
-    border-radius: 5px 5px 0 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #flex-container {
@@ -76,7 +77,8 @@ a:focus {
     background-color: gainsboro;
     padding: 10px;
     border: 1px solid darkgrey;
-    border-radius: 0 0 5px 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 button {
@@ -93,7 +95,7 @@ button {
     outline: none;
     opacity: 0.8;
     -webkit-transition-duration: .25s;
-    transition-duration: .25s;
+            transition-duration: .25s;
 }
 button:hover {
     opacity: 1;
@@ -103,8 +105,8 @@ button:focus {
     opacity: 1;
 }
 button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
+    padding: 0;
+    border: 0;
 }
 
 .digit, [id='.'] {
@@ -115,6 +117,6 @@ button::-moz-focus-inner {
     background-color: orange;
 }
 
-[id='0'],  #del {
+[id='0'], #del {
     width: 184px;
 }
