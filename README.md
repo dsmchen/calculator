@@ -1,8 +1,10 @@
 This is a JavaScript, HTML and CSS project. Demonstrated skills include:
+
 - JS numbers, variables, strings, regular expressions, conditions, functions, arrays, DOM manipulation and objects
 - HTML and CSS basics
 
 Sources:
+
 - [Calculator](https://duckduckgo.com/?q=calculator&t=osx&ia=calculator) by DuckDuckGo
 - [Calculator](https://www.desmos.com/fourfunction) by Desmos
 - [regex101.com](https://regex101.com) by Firas Dib
@@ -11,6 +13,7 @@ Sources:
 - [Flexbox footer](https://dev.to/domysee/keeping-the-footer-at-the-bottom-with-css-flexbox-5h5f) by Dominik Weber
 
 Areas for improvement
+
 - Unary minus operator
 - Accessibility
 
